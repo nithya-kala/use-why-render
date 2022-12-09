@@ -1,0 +1,25 @@
+{
+  "name": "use-why-render",
+  "version": "1.0.1",
+  "description": "React hook to track why the component is re-rendered",
+  "main": "dist/index.js",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.11",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react": "^2.2.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3"
+  },
+  "author": "Nithyakala",
+  "license": "MIT"
+}
