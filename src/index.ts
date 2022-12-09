@@ -21,6 +21,7 @@ import { useRef, useEffect } from "react"
  * @prop {Array.<Object>} args Properties to track for changes
  */
 
+const HIGH_RENDER_COUNT = 2
 const WARN_COUNT = 1
 const RESET_COUNT_INTERVAL = 1000
 
@@ -71,6 +72,21 @@ function useWhyRender(...args: any) {
       // if it's been a while since the last re-render then it's a good time to reset update count
       if (Date.now() - ref.current.time > RESET_COUNT_INTERVAL) {
         ref.current.count = 1
+      }
+
+      // If the component has re-rendered too many times then we should display the hint
+      // Make sure the hint is shown only once, hence the timeout (and clearTimeout)
+      if (ref.current.count > HIGH_RENDER_COUNT) {
+        const { count } = ref.current
+        clearTimeout(ref.current.warn)
+        // @ts-ignore
+        ref.current.warn = setTimeout(
+          () =>
+            console.log(
+              `Re-rendering ${count} times in short succession. Looks like an opportunity for improvement.`
+            ),
+          1000
+        )
       }
     }
 
