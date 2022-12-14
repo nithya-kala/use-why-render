@@ -51,6 +51,12 @@ const MyComponent = ({ name, age }) => {
 }
 ```
 
+See the sample directory for a complete example of how to use the library.
+
+## Stackblitz example
+
+https://stackblitz.com/edit/vitejs-vite-8dmguz
+
 ## Running in production
 
 We make sure it's removed from production build. It only runs when NODE_ENV !== "production".
