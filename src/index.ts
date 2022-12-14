@@ -1,11 +1,11 @@
 /**
- * React Hook that identifies which properties triggered a re-render
+ * React Hook that identifies which properties or states triggered a re-render
  * Usage:
  *  useWhyRender(props);
  *
  *  useWhyRender(props, { state1, state2 })
  *
- *  useWhyRender({ prop1, prop 2}, { state1, state2 }, obj3, obj4)
+ *  useWhyRender({ prop1, prop 2}, { state1, state2 })
  *
  * todo:
  *  - Move constants to a config object
@@ -15,7 +15,7 @@ import { useRef, useEffect } from "react"
 
 /**
  * @typedef {Object} RefType
- * @prop {number} time Timestamp of the last update or render
+ * @prop {number} time Timestamp of the last render
  * @prop {number} count Recent update count
  * @prop {typeof setTimeout} [warn] Timeout ID for a high update count warning
  * @prop {Array.<Object>} args Properties to track for changes
@@ -37,7 +37,7 @@ function logChanges(changes: any) {
   const count = changes.length
   if (!count) {
     console.warn(
-      `An unknown data item has triggered a re-render. Chances are you're not providing it to %creact-whyupdate`,
+      `An unknown data item has triggered a re-render. Chances are you're not providing it to %creact-whyrender`,
       "font-face: monospace; font-size: 0.65rem; font-style: italic;"
     )
   } else if (count) {

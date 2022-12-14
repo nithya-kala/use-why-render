@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "./App.css"
-import useWhyRender from "../../src/index"
+import useWhyRender from "use-why-render"
 
 function App(props: any) {
   const [count, setCount] = useState(0)
