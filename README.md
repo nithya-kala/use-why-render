@@ -8,7 +8,7 @@ This React hook helps you identify what caused re-render in your React component
 
 ## Usage
 
-Create an instance of the `use-why-render` class, and call its `useWhy()` method. Then watch the console for information of why the component updated.
+Create an instance of the `use-why-render` class, and call its `useWhyRender()` method. Then watch the console for information of why the component is rendered again.
 
 ```jsx
 import React from "react"
@@ -22,7 +22,7 @@ const MyComponent = (props) => {
 
 ### Destructured props
 
-You also can pass select properties to the hook.
+You also can pass select properties to the hook. In this example we'll get notified about changes in the `name` prop, only.
 
 ```jsx
 const MyComponent = ({ name, age }) => {
@@ -35,9 +35,9 @@ const MyComponent = ({ name, age }) => {
 }
 ```
 
-In this example we'll get notified about changes in the `name` prop, only.
-
 ### Watching state
+
+In this example we'll get notified about changes in the `name` prop and `count` state.
 
 ```jsx
 const MyComponent = ({ name, age }) => {
